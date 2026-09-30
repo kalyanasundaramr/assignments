@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Ahalya",
+        "phone": "919962199968",
+        "message": "Good morning Ahalya, hope you are doing well.",
+        "status": "Sent",
+        "last_3_messages": [],
+        "screenshot": "c:\\Learning\\ProjectFiles\\AI Master Class\\Repo\\assignments\\Week1\\Day3\\playwright\\whatsapp_screenshots\\Ahalya_2026-09-30.png",
+        "time": "2026-09-30 09:18:34"
+    },
+    {
+        "name": "RK",
+        "phone": "919080469292",
+        "message": "Hello RK, this is a message from our team.",
+        "status": "Sent",
+        "last_3_messages": [],
+        "screenshot": "c:\\Learning\\ProjectFiles\\AI Master Class\\Repo\\assignments\\Week1\\Day3\\playwright\\whatsapp_screenshots\\RK_2026-09-30.png",
+        "time": "2026-09-30 09:18:56"
+    }
+]
