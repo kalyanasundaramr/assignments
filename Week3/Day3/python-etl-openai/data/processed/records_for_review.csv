@@ -1,0 +1,10 @@
+name,email,phone,department,email_valid,phone_valid,review_status
+Michael Johnson,michael.johnson@company.com,55571227,Operations,True,False,Manual review required
+James Wilson,james.wilsonat-domain.com,55542534,Engineering,False,False,Manual review required
+Barbara Rodriguez,barbara.rodriguez@company.com,55516480,Operations,True,False,Manual review required
+Christopher Jackson,christopher.jackson@company.com,55597164,Support,True,False,Manual review required
+Dorothy Ramirez,dorothy.ramirezat-domain.com,5553798778,Engineering,False,True,Manual review required
+Andy Allen,andy.allen@,5558574101,Finance,False,True,Manual review required
+Edward Flores,edward.flores@company.com,55552710,Operations,True,False,Manual review required
+Bob Rivera,://riveraat-domain.com,5553349257,Engineering,False,True,Manual review required
+Alice Campbell,alice.campbell@company.com,55573518,Marketing,True,False,Manual review required

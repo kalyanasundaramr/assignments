@@ -1,0 +1,77 @@
+{
+  "input_file": "data\\raw\\unclean_data.csv",
+  "output_file": "data\\processed\\cleaned_data.csv",
+  "original_records": 50,
+  "output_records": 50,
+  "duplicate_rows_detected": 0,
+  "invalid_emails": 4,
+  "phones_requiring_review": 6,
+  "ai_reviews": [
+    {
+      "name": "Michael Johnson",
+      "issues": [
+        "phone number length suspiciously short"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "James Wilson",
+      "issues": [
+        "email missing '@' symbol"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Barbara Rodriguez",
+      "issues": [
+        "phone number length suspiciously short"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Christopher Jackson",
+      "issues": [
+        "phone number length suspiciously short"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Dorothy Ramirez",
+      "issues": [
+        "email missing '@' symbol",
+        "phone number length suspiciously long"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Andy Allen",
+      "issues": [
+        "email incomplete",
+        "phone number length suspiciously long"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Edward Flores",
+      "issues": [
+        "phone number length suspiciously short"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Bob Rivera",
+      "issues": [
+        "email invalid format",
+        "phone number length suspiciously long"
+      ],
+      "recommended_action": "manual_review"
+    },
+    {
+      "name": "Alice Campbell",
+      "issues": [
+        "phone number length suspiciously short"
+      ],
+      "recommended_action": "manual_review"
+    }
+  ]
+}
