@@ -1,0 +1,188 @@
+{
+  "name": "Slack_AI_Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C0CAEPT9ARY",
+          "mode": "list",
+          "cachedResultName": "recipebot"
+        },
+        "options": {
+          "resolveIds": false
+        }
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        -80
+      ],
+      "id": "06e0cb5c-8a2f-461e-8d8b-cdb16d0199f4",
+      "name": "Slack Trigger",
+      "webhookId": "4695cef7-c841-480b-bf4e-a1212f4cb586",
+      "credentials": {
+        "slackApi": {
+          "id": "QODiG4ZgRql6X6m1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4f9c5061-b6e9-49c9-b2d1-228977559eda",
+              "name": "=recipe",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -240,
+        -80
+      ],
+      "id": "0aaa5711-d3b1-4db2-8ea9-e6e818941a42",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a helpful recipe shopping assistant.\n\nThe requested recipe is: {{ $json.recipe }}\n\nList the ingredients and products needed to make this recipe for 2–3 people.\n\nRules:\n- Include approximate quantities.\n- Group ingredients into a clear bulleted list.\n- Keep the response practical and concise.\n- If the recipe name is empty or unclear, politely ask the user to provide a clearer recipe name.\n- Do not invent unrelated ingredients.\nBefore listing ingredients, determine whether the requested\ntext identifies a recognizable dish or recipe.\n\nIf it is not a recognizable recipe, do not invent ingredients.\nReply: \"I couldn't identify that recipe. Please enter a\nrecognizable recipe name, such as Paneer Butter Masala.\"",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        -16,
+        -80
+      ],
+      "id": "6728588c-c82a-4309-905f-152d4bde7de3",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        128
+      ],
+      "id": "96e5919f-a6af-4934-b559-e3b75042de04",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "bcv5Z3XxagXhdsNe",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Slack Trigger').item.json.channel }}"
+        },
+        "text": "={{ $json.text }}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.7,
+      "position": [
+        352,
+        -80
+      ],
+      "id": "ba03077c-c4e7-4a4a-9d51-c9c32103616d",
+      "name": "Send a message",
+      "webhookId": "356309da-aee8-48f1-b800-dfd6776af62c",
+      "credentials": {
+        "slackApi": {
+          "id": "QODiG4ZgRql6X6m1",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Slack Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "b775f7d7-505e-4174-ad0f-04ff3249e357",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d171ee7987c745c0ae04e39cb4a8a10c6f0cdec626596e03ebb139d86dae00e"
+  },
+  "nodeGroups": [],
+  "id": "irOeTDP8CsPs77FM",
+  "tags": []
+}
