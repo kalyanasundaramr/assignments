@@ -1,6 +1,13 @@
-# This script demonstrates how to use the autogen-agentchat library to create an HR assistant agent that generates 
-# a job description for a Junior Python Developer. The agent uses the OpenAI GPT-4o-mini model to generate the response, 
-# which is formatted as specified in the task. The response is streamed to the console for real-time interaction.
+
+"""
+HR Assistant Agent — Week 5, Day 1
+
+Creates an AutoGen assistant that generates a job description
+for a Junior Python Developer using OpenAI's GPT-4o-mini model.
+
+Expected output:
+    Job title followed by five numbered responsibilities.
+"""
 
 # Import the asyncio library to handle asynchronous operations in Python.
 import asyncio
