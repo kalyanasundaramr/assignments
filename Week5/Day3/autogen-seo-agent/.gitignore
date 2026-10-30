@@ -1,0 +1,34 @@
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.vscode/
+.idea/
+
+# Generated SEO content
+outputs/*
+
+# Keep outputs directory
+!outputs/.gitkeep
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage

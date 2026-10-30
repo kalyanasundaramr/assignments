@@ -1,0 +1,42 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Git
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Test scripts
+test_*.py
+
+# Local logs and temporary files
+*.log
+*.tmp
+.cache/
+
+# Local generated content
+outputs/
